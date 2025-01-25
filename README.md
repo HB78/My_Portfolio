@@ -91,7 +91,7 @@ Je combine passion technique et créativité pour développer des solutions qui 
 ## 📬 Restons Connectés
 
 <div align="center">
-  👉 Intéressé par une collaboration ?? 
+  👉 Intéressé par une collaboration ?
   
   💌 [a venir]
   🔗 [a venir]
