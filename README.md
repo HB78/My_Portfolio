@@ -20,6 +20,7 @@ Développeur web passionné, je crée des solutions numériques innovantes qui c
 - MongoDB
 - Mongoose
 - MySQL
+- Shadcn UI
 
 ## Projets Clés
 
@@ -33,7 +34,7 @@ Développeur web passionné, je crée des solutions numériques innovantes qui c
 
 ### 🏢 Orinoco - Réseau Social d'Entreprise
 
-**Technologie:** React, Node.js
+**Technologie:** React, Node.js, Express, MySQL
 
 - Solution collaborative interne
 - Communication d'équipe sécurisée
