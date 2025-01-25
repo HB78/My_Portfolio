@@ -13,6 +13,13 @@ Développeur web passionné, je crée des solutions numériques innovantes qui c
 - TypeScript
 - Three.js
 - Tailwind CSS
+- Prisma
+- PostgreSQL
+- Node.js
+- Express
+- MongoDB
+- Mongoose
+- MySQL
 
 ## Projets Clés
 
@@ -34,7 +41,7 @@ Développeur web passionné, je crée des solutions numériques innovantes qui c
 
 ### 📄 TkeBot - Assistant IA d'Analyse PDF
 
-**Technologie:** Intelligence Artificielle, Python
+**Technologie:** Intelligence Artificielle, Vercel AI SDK, Langchain
 
 - Analyse de documents PDF avancée
 - Extraction intelligente d'informations
