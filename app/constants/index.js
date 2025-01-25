@@ -247,7 +247,7 @@ const projects = [
       },
     ],
     image: jobit,
-    source_code_link: "https://github.com/HB78/BoubttaHicham_3_10042021",
+    source_code_link: "https://github.com/HB78/La-kika-Streaming-video",
   },
   {
     name: "LA CHOUETTE AGENCE",
