@@ -2,7 +2,9 @@
 
 import { technologies } from "../constants";
 import { SectionWrapper } from "../hoc";
-import BallCanvas from "./canvas/Ball";
+// import BallCanvas from "./canvas/Ball";
+import dynamic from "next/dynamic";
+const BallCanvas = dynamic(() => import("./canvas/Ball"), { ssr: false });
 
 // const BallCanvas = dynamic(
 //   () => import("./canvas").then((mod) => mod.BallCanvas),
