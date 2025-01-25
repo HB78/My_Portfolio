@@ -39,7 +39,7 @@ Développeur web passionné, je crée des solutions numériques innovantes qui c
 - Communication d'équipe sécurisée
 - Gestion de projets intégrée
 
-### 📄 TkeBot - Assistant IA d'Analyse PDF
+### 📄 TkeBot - Assistant IA d'Analyse PDF pour l'entreprise TKE
 
 **Technologie:** Intelligence Artificielle, Vercel AI SDK, Langchain
 
