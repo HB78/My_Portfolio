@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Personnel
 
-## Getting Started
+## À Propos de Moi
 
-First, run the development server:
+![Photo de Profil](./app/assets/logos.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Développeur web passionné, je crée des solutions numériques innovantes qui combinent technologie et créativité.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Principales
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Next.js
+- React
+- TypeScript
+- Three.js
+- Tailwind CSS
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Projets Clés
 
-## Learn More
+### 🎬 Lakika - Plateforme de Streaming
 
-To learn more about Next.js, take a look at the following resources:
+**Technologie:** Next.js, React
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Plateforme de streaming vidéo moderne
+- Interface utilisateur intuitive
+- Système de recommandation personnalisé
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 🏢 Orinoco - Réseau Social d'Entreprise
 
-## Deploy on Vercel
+**Technologie:** React, Node.js
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Solution collaborative interne
+- Communication d'équipe sécurisée
+- Gestion de projets intégrée
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 📄 TkeBot - Assistant IA d'Analyse PDF
+
+**Technologie:** Intelligence Artificielle, Python
+
+- Analyse de documents PDF avancée
+- Extraction intelligente d'informations
+- Rapport détaillé généré automatiquement
+
+<!-- ## Contact
+
+- Email: [votre.email@exemple.com]
+- LinkedIn: [Votre Profil LinkedIn]
+- GitHub: [Votre Profil GitHub] -->
+
+## Compétences
+
+- Développement Web Full-Stack
+- Design Responsive
+- Intégration d'IA
+- Gestion de Projet
+- Optimisation Performance
+
+## Portfolio Généré Avec
+
+- Next.js 15
+- React 19
+- JavaScript
+- Tailwind CSS
+- Three.js
+- React Three Fiber
+- React Vertical Timeline Component
