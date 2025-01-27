@@ -95,12 +95,14 @@ const Hero = () => {
 
         {/* //le texte de présentation à coté du trait violet */}
         <div>
-          <h1 className={`${styles.heroHeadText} text-white xs:text-md`}>
+          <h1
+            className={`${styles.heroHeadText} text-white xs:text-md sm:text-lg`}
+          >
             Hi, I&#39;m
             <span className="text-[#915eff] ml-2">{element}</span>
             <span id="cursor">|</span>
           </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
+          <p className={`${styles.heroSubText} mt-2 text-white-100 sm:text-lg`}>
             I develop 3D visuals, user{" "}
             <br className="sm:block hidden md:block" /> interfaces and web
             applications.
