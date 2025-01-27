@@ -26,7 +26,7 @@ const ProjectCard = ({
           scale: 1,
           speed: 450,
         }}
-        className="lg:w-[360px] bg-tertiary p-5 rounded-2xl"
+        className="lg:w-[200px] bg-tertiary p-5 rounded-2xl w-[200px]"
       >
         {/* //la div qui contient la photo du projet et l'image de github, on met relative sur l'image du projet pour la lier avec le logo github */}
         <div className="relative w-full">
