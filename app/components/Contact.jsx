@@ -7,7 +7,15 @@ import { toast } from "sonner";
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { slideIn } from "../utils/motion";
-import { EarthCanvas } from "./canvas";
+// import { EarthCanvas } from "./canvas";
+import dynamic from "next/dynamic";
+
+const EarthCanvas = dynamic(
+  () => import("./canvas").then((mod) => mod.EarthCanvas),
+  {
+    ssr: false, // Désactive le rendu côté serveur pour ce composant
+  }
+);
 
 const Contact = () => {
   //les messages d'eereurs du formulaire
