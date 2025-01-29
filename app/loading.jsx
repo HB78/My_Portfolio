@@ -1,6 +1,6 @@
 const Loading = () => {
   return (
-    <div className="min-h-screen flex justify-center items-center bg-[#1f242d]">
+    <div className="min-h-screen flex flex-col gap-6 justify-center items-center bg-[#1f242d]">
       <h1 className="text-white text-center text-xl">
         Bienvenue sur mon portfolio
       </h1>

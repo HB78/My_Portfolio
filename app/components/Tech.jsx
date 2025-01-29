@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { technologies } from "../constants";
 import { SectionWrapper } from "../hoc";
-import BubbleStackMobile from "./../components/BubbleStack";
+import BubbleStackMobile from "./../components/BubbleStackMobile";
 // import BallCanvas from "./canvas/Ball";
 import dynamic from "next/dynamic";
 const BallCanvas = dynamic(() => import("./canvas/Ball"), { ssr: false });
