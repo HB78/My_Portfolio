@@ -22,9 +22,9 @@ const ProjectCard = ({
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <Tilt
         options={{
-          max: 45,
+          max: 25, //45 avant
           scale: 1,
-          speed: 450,
+          speed: 400, //450 avant
         }}
         className="lg:w-[360px] bg-tertiary p-5 rounded-2xl w-[280px]"
       >
@@ -36,7 +36,8 @@ const ProjectCard = ({
             className="w-full h-[155px] object-cover rounded-2xl"
             width={370} // Largeur maximale de l'image
             height={155} // Hauteur maximale de l'image
-            quality={80}
+            quality={70}
+            priority
           />
 
           {/* //div qui contient l'image github et la div sur laquelle on click pour aller sur github */}
