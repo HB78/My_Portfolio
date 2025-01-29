@@ -166,6 +166,12 @@ export const HeroMobileEffect = (props) => {
     canvas.width = innerWidth;
     canvas.height = innerHeight;
 
+    // Assurez-vous que le canvas couvre toute la largeur et la hauteur
+    if (canvas && containerRef.current) {
+      containerRef.current.style.width = `${innerWidth}px`;
+      containerRef.current.style.height = `${innerHeight}px`;
+    }
+
     center[0] = 0.5 * canvas.width;
     center[1] = 0.5 * canvas.height;
   };
@@ -210,7 +216,7 @@ export const HeroMobileEffect = (props) => {
         ref={containerRef}
         className="absolute h-full w-full inset-0 z-0 bg-transparent flex items-center justify-center"
       >
-        <canvas ref={canvasRef}></canvas>
+        <canvas ref={canvasRef} style={{ width: "100%", height: "100%" }} />
       </motion.div>
       <div className={cn("relative z-10", props.className)}>
         {props.children}

@@ -138,13 +138,13 @@ const Hero = () => {
       </div>
     </section>
   ) : (
-    <div className="w-[calc(100%-4rem)] mx-auto rounded-md  h-screen overflow-hidden">
+    <div className="w-full mx-auto h-screen">
       <HeroMobileEffect
         backgroundColor="transparent"
         rangeY={200}
         particleCount={100}
         // baseHue={120}
-        className="flex items-center flex-col justify-center px-2 md:px-10 w-full h-full"
+        className="flex items-center flex-col justify-center w-full h-full"
       >
         <section className="relative w-full h-screen mx:auto">
           {/* La div qui va contenir le bureau et tout le contenu qui va avec */}
@@ -161,14 +161,12 @@ const Hero = () => {
 
             {/* Le texte de présentation à côté du trait violet */}
             <div>
-              <h1 className={`${styles.heroHeadText} text-white xs:text-md`}>
+              <h1 className={`${styles.heroHeadText} text-white`}>
                 Hi, I&#39;m
                 <span className="text-[#915eff] ml-2">{element}</span>
                 <span id="cursor">|</span>
               </h1>
-              <p
-                className={`${styles.heroSubText} mt-2 text-white-100 sm:text-2xl`}
-              >
+              <p className={`${styles.heroSubText} mt-2 text-white-100`}>
                 I develop 3D visuals, user{" "}
                 <br className="sm:block hidden md:block" /> interfaces and web
                 applications.
