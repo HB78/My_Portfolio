@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-
 export default {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -29,6 +28,15 @@ export default {
       },
       backgroundImage: {
         "hero-pattern": "url('/app/assets/herobg.png')",
+      },
+      keyframes: {
+        float: {
+          "0%, 100%": { transform: "translateY(0px) scale(1)" },
+          "50%": { transform: "translateY(-20px) scale(1.02)" },
+        },
+      },
+      animation: {
+        float: "float 3s ease-in-out infinite",
       },
     },
   },
