@@ -1,204 +1,116 @@
 "use client";
 import { motion } from "framer-motion";
-import dynamic from "next/dynamic";
+import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useEffect, useState } from "react";
 import { styles } from "../styles";
-// import { ComputersCanvas } from "./canvas";
 import { HeroMobileEffect } from "./HeroMobileEffect";
+import TextType from "./TextType";
 
-const ComputersCanvas = dynamic(
-  () => import("./canvas").then((mod) => mod.ComputersCanvas),
-  {
-    ssr: false,
-  }
-);
+const fadeIn = (delay = 0) => ({
+  initial: { opacity: 0, y: 30 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, delay, ease: "easeOut" },
+});
 
 const Hero = () => {
-  // Fonction de temporisation
-  function sleep(ms) {
-    return new Promise((resolve) => {
-      setTimeout(resolve, ms);
-    });
-  }
-
-  // Avant, j'avais mis un tableau simple, le useMemo permet de ne pas recréer le tableau à chaque fois que le hook change
-  const phrases = ["Hicham", "a fullstack web developer"];
-
-  const [element, setElement] = useState("");
-  const [isTyping, setIsTyping] = useState(true);
-  const [isDesktop, setIsDesktop] = useState(true);
-
-  // Le temps de sommeil entre chaque mot
-  let sleepTime = 100;
-
-  // Fonction asynchrone pour gérer l'écriture
-  const writeLoop = useCallback(async () => {
-    let curPhraseIndex = 0;
-
-    while (isTyping) {
-      let curWord = phrases[curPhraseIndex];
-
-      for (let i = 0; i < curWord.length; i++) {
-        setElement(curWord.substring(0, i + 1));
-        // Correspond au temps d'attente au début de l'écriture de chaque mot
-        await sleep(sleepTime);
-      }
-
-      // Correspond au temps d'attente après l'écriture de chaque mot
-      await sleep(sleepTime * 10);
-
-      // Le reverse pour passer au mot suivant
-      for (let i = curWord.length; i > 0; i--) {
-        setElement(curWord.substring(0, i - 1));
-        await sleep(sleepTime);
-      }
-
-      await sleep(sleepTime * 5);
-
-      // Ici, la condition permet de passer au mot suivant et de recommencer si on arrive à la fin du tableau
-      if (curPhraseIndex === phrases.length - 1) {
-        curPhraseIndex = 0;
-      } else {
-        curPhraseIndex++;
-      }
-    }
-  }, [isTyping]);
-
-  useEffect(() => {
-    writeLoop();
-    return () => setIsTyping(false);
-  }, []);
-
-  useEffect(() => {
-    const checkSize = () => {
-      setIsDesktop(window.innerWidth >= 768); // Si la largeur est supérieure ou égale à 768px
-    };
-
-    checkSize(); // Vérification initiale
-    window.addEventListener("resize", checkSize); // Mise à jour lors du redimensionnement
-
-    return () => window.removeEventListener("resize", checkSize); // Cleanup
-  }, []);
-
-  return isDesktop ? (
-    <section className="relative w-full h-screen mx:auto">
-      {/* La div qui va contenir le bureau et tout le contenu qui va avec */}
-      <div
-        className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
-      >
-        {/* La div qui contient le point rouge et le trait violet */}
-        <div className="flex flex-col justify-center items-center mt-5">
-          {/* Le point rond en haut à gauche du canvas */}
-          <div className="w-5 h-5 rounded-full bg-[#915eff]" />
-          {/* Le trait en dessous du point violet */}
-          <div className="w-1 sm:h-80 h-40 violet-gradient" />
-        </div>
-
-        {/* Le texte de présentation à côté du trait violet */}
-        <div>
-          <h1 className={`${styles.heroHeadText} text-white xs:text-md`}>
-            Hi, I&#39;m
-            <span className="text-[#915eff] ml-2">{element}</span>
-            <span id="cursor">|</span>
-          </h1>
-          <p
-            className={`${styles.heroSubText} mt-2 text-white-100 sm:text-2xl`}
-          >
-            I develop 3D visuals, user{" "}
-            <br className="sm:block hidden md:block" /> interfaces and web
-            applications.
-          </p>
-        </div>
-      </div>
-
-      <ComputersCanvas />
-
-      {/* La petite animation arrondie qui mène à la section suivante */}
-      <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
-        <Link
-          href="#about"
-          aria-label="Un lien qui mène vers la section suivante"
-          title="Un lien qui mène vers la section about"
-        >
-          <div className="flex justify-center items-start w-[35px] h-[64px] rounded-3xl border-4 border-secondary p-2">
-            <motion.div
-              animate={{
-                y: [0, 24, 0],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
-              className="w-3 h-3 rounded-full bg-secondary mb-1"
-            />
-          </div>
-        </Link>
-      </div>
-    </section>
-  ) : (
-    <div className="w-full mx-auto h-screen">
+  return (
+    <section className="relative w-full h-screen">
       <HeroMobileEffect
         backgroundColor="transparent"
         rangeY={200}
-        particleCount={100}
-        // baseHue={120}
+        baseHue={120}
+        particleCount={25}
         className="flex items-center flex-col justify-center w-full h-full"
       >
-        <section className="relative w-full h-screen mx:auto">
-          {/* La div qui va contenir le bureau et tout le contenu qui va avec */}
-          <div
-            className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
-          >
-            {/* La div qui contient le point rouge et le trait violet */}
-            <div className="flex flex-col justify-center items-center mt-5">
-              {/* Le point rond en haut à gauche du canvas */}
-              <div className="w-5 h-5 rounded-full bg-[#915eff]" />
-              {/* Le trait en dessous du point violet */}
-              <div className="w-1 sm:h-80 h-40 violet-gradient" />
-            </div>
+        <div
+          className={`${styles.paddingX} max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between h-full pt-[120px] pb-10 gap-10`}
+        >
+          {/* Colonne gauche — Texte */}
+          <div className="flex-1 flex flex-col items-start justify-center">
+            <motion.p
+              {...fadeIn(0)}
+              className="w-full text-[#915eff] text-sm sm:text-base text-center font-medium tracking-widest uppercase mb-4 lg:text-left"
+            >
+              Welcome to my portfolio
+            </motion.p>
 
-            {/* Le texte de présentation à côté du trait violet */}
-            <div>
-              <h1 className={`${styles.heroHeadText} text-white`}>
-                Hi, I&#39;m
-                <span className="text-[#915eff] ml-2">{element}</span>
-                <span id="cursor">|</span>
-              </h1>
-              <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-                I develop 3D visuals, user{" "}
-                <br className="sm:block hidden md:block" /> interfaces and web
-                applications.
-              </p>
-            </div>
+            <motion.h1
+              {...fadeIn(0.2)}
+              className={`${styles.heroHeadText} text-white`}
+            >
+              Hi, I&apos;m{" "}
+              <span className="text-[#915eff]">
+                <TextType
+                  texts={["Hicham", "a fullstack web developer"]}
+                  typingSpeed={80}
+                  deletingSpeed={50}
+                  pauseDuration={1500}
+                />
+              </span>
+            </motion.h1>
+
+            <motion.p
+              {...fadeIn(0.4)}
+              className={`${styles.heroSubText} mt-4 text-[#dfd9ff]`}
+            >
+              I develop{" "}
+              <span className="blue-text-gradient font-semibold">
+                3D visuals
+              </span>
+              , user{" "}
+              <span className="pink-text-gradient font-semibold">
+                interfaces
+              </span>{" "}
+              and{" "}
+              <span className="green-text-gradient font-semibold">
+                web applications
+              </span>
+              .
+            </motion.p>
+
+            <motion.div {...fadeIn(0.6)} className="flex gap-4 mt-8">
+              <Link
+                href="#works"
+                className="bg-[#915eff] hover:bg-[#7a4de0] text-white font-medium py-3 px-8 rounded-xl transition-colors duration-300"
+              >
+                See my work
+              </Link>
+              <Link
+                href="#contact"
+                className="border-2 border-[#915eff] text-[#915eff] hover:bg-[#915eff]/10 font-medium py-3 px-8 rounded-xl transition-colors duration-300"
+              >
+                Contact me
+              </Link>
+            </motion.div>
           </div>
 
-          {/* La petite animation arrondie qui mène à la section suivante */}
-          <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
-            <Link
-              href="#about"
-              aria-label="Un lien qui mène vers la section suivante"
-              title="Un lien qui mène vers la section about"
-            >
-              <div className="flex justify-center items-start w-[35px] h-[64px] rounded-3xl border-4 border-secondary p-2">
-                <motion.div
-                  animate={{
-                    y: [0, 24, 0],
-                  }}
-                  transition={{
-                    duration: 1.5,
-                    repeat: Infinity,
-                    repeatType: "loop",
-                  }}
-                  className="w-3 h-3 rounded-full bg-secondary mb-1"
+          {/* Colonne droite — Photo/Avatar */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.5, ease: "easeOut" }}
+            className="flex-1 flex items-center justify-center"
+          >
+            <div className="relative">
+              {/* Cercle décoratif en arrière-plan */}
+              <div className="absolute -inset-4 rounded-full bg-[#915eff]/20 blur-3xl" />
+
+              {/* Container de l'image */}
+              <div className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] lg:w-[400px] lg:h-[400px] rounded-full border-2 border-[#915eff] shadow-lg shadow-[#915eff]/20 overflow-hidden bg-tertiary">
+                <Image
+                  src="/images/portfolio.jpg"
+                  alt="Hicham — Fullstack Developer"
+                  fill
+                  className="object-cover"
+                  priority
+                  sizes="(max-width: 768px) 100vw, 33vw"
                 />
               </div>
-            </Link>
-          </div>
-        </section>
+            </div>
+          </motion.div>
+        </div>
       </HeroMobileEffect>
-    </div>
+    </section>
   );
 };
 

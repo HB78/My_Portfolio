@@ -28,8 +28,8 @@ const Computers = ({ isMobile }) => {
       <primitive
         object={computer.scene}
         //on change la scale car le pc est trop gros et prends tout l'écran
-        scale={isMobile ? 0.5 : 0.65}
-        position={isMobile ? [0, -3, -1] : [0, -3.25, -1.5]}
+        scale={isMobile ? 0.5 : 1.3}
+        position={isMobile ? [0, -3, -1] : [0, -5.5, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
       />
     </mesh>
@@ -71,7 +71,7 @@ const ComputersCanvas = () => {
       shadows
       //c'est qui va définirla partie du pc que l'on va regarder
       //axes x y z
-      camera={{ position: [20, 3, 5], fov: 25 }}
+      camera={{ position: [20, 3, 5], fov: 30 }}
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>

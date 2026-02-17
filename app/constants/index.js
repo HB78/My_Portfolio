@@ -2,33 +2,47 @@
 
 import {
   backend,
-  carrent,
+  burpsuite,
+  claude,
   creator,
   css,
   docker,
-  figma,
+  expressjs,
   git,
+  graphql,
   html,
   javascript,
-  jobit,
+  kalilinux,
+  langchain,
   meta,
+  metasploit,
   mobile,
   mongodb,
+  motion,
+  nextjs,
+  nmap,
   nodejs,
+  openai,
+  owaspzap,
+  postgresql,
+  prisma,
+  promptengineer,
   reactjs,
   redux,
+  restapi,
   shopify,
   starbucks,
   tailwind,
   tesla,
   threejs,
-  tripguide,
   typescript,
+  vercelaisdk,
   web,
+  wireshark,
+  zustand,
 } from "../assets";
 
 import mania from "../assets/mania.png";
-import orinoco from "../assets/orinoco.png";
 import sopekoko from "../assets/sopekoko.png";
 
 export const navLinks = [
@@ -111,12 +125,62 @@ const technologies = [
     icon: git,
   },
   {
-    name: "figma",
-    icon: figma,
-  },
-  {
     name: "docker",
     icon: docker,
+  },
+];
+
+const techCategories = [
+  {
+    title: "Frontend",
+    technologies: [
+      { name: "HTML 5", icon: html },
+      { name: "CSS 3", icon: css },
+      { name: "JavaScript", icon: javascript },
+      { name: "TypeScript", icon: typescript },
+      { name: "React JS", icon: reactjs },
+      { name: "Next.js", icon: nextjs },
+      { name: "Zustand", icon: zustand },
+      { name: "Tailwind CSS", icon: tailwind },
+      { name: "Framer Motion", icon: motion },
+      { name: "Three JS", icon: threejs },
+    ],
+  },
+  {
+    title: "Backend",
+    technologies: [
+      { name: "Node JS", icon: nodejs },
+      { name: "Express", icon: expressjs },
+      { name: "MongoDB", icon: mongodb },
+      { name: "PostgreSQL", icon: postgresql },
+      { name: "Prisma", icon: prisma },
+      { name: "REST API", icon: restapi },
+      { name: "GraphQL", icon: graphql },
+      { name: "Docker", icon: docker },
+      { name: "Git", icon: git },
+    ],
+  },
+  {
+    title: "Intelligence Artificielle",
+    technologies: [
+      { name: "Vercel AI SDK", icon: vercelaisdk },
+      { name: "OpenAI API", icon: openai },
+      { name: "LangChain", icon: langchain },
+      { name: "Claude API", icon: claude },
+      { name: "RAG", icon: null },
+      { name: "Prompt Engineering", icon: promptengineer },
+    ],
+  },
+  {
+    title: "Cybersécurité",
+    technologies: [
+      { name: "Burp Suite", icon: burpsuite },
+      { name: "Wireshark", icon: wireshark },
+      { name: "Nmap", icon: nmap },
+      { name: "Metasploit", icon: metasploit },
+      { name: "OWASP ZAP", icon: owaspzap },
+      { name: "Kali Linux", icon: kalilinux },
+    ],
   },
 ];
 
@@ -204,30 +268,30 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Reservia",
+    name: "AnimeQuizz",
     description:
-      "ENTREPRISE DE PLANIFICATION DE VACANCES - Intégration de prototype de maquette pour le site BOOKI en HTML et CSS.",
+      "Quiz musical pour la Société Générale - Intégration d'un quiz musical avec Next.js et Tailwind CSS pour optimiser la cohésion d'équipe lors des after works",
     tags: [
       {
-        name: "html",
+        name: "Typescript",
         color: "blue-text-gradient",
       },
       {
-        name: "css",
+        name: "TailwindCSS",
         color: "green-text-gradient",
       },
       {
-        name: "responsive",
+        name: "React-Query",
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/HB78/Projetp2boubttahicham",
+    image: "/images/animequizz.jpg",
+    source_code_link: "https://github.com/HB78/Anime-quizz",
   },
   {
     name: "LA KIKA",
     description:
-      "SITE DE STREAMING - Clone fonctionnel de Netflix pour regarder des films et des séries.",
+      "SITE DE STREAMING - Clone fonctionnel de Netflix pour regarder des films, des séries et les match de football et ce gratuitement.",
     tags: [
       {
         name: "NextJS",
@@ -241,51 +305,67 @@ const projects = [
         name: "Prisma",
         color: "pink-text-gradient",
       },
-      {
-        name: "TailwindCSS",
-        color: "blue-text-gradient",
-      },
     ],
-    image: jobit,
+    image: "/images/lakika.jpg",
     source_code_link: "https://github.com/HB78/La-kika-Streaming-video",
   },
   {
-    name: "LA CHOUETTE AGENCE",
+    name: "PHANTOM CHAT",
     description:
-      "AGENCE DE WEB DESIGN - Amélioration du référencement et de l'accessibilité du site de la Chouette Agence.",
+      "PHANTOM CHAT - chat post-quantique crypté - Création d'une application de messagerie sécurisée avec chiffrement de bout en bout pour garantir la confidentialité des conversations.",
     tags: [
       {
-        name: "seo",
+        name: "Elysia",
         color: "blue-text-gradient",
       },
       {
-        name: "accessibility",
+        name: "Kyber",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "upstash",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "gsap",
+        color: "orange-text-gradient",
+      },
+    ],
+    image: "/images/phantom.png",
+    source_code_link: "https://github.com/HB78/phantom_chat",
+  },
+  {
+    name: "LASTMODEL",
+    description:
+      "SITE DE RENCONTRE - Création d'un site de rencontre avec algorithme de matching pour connecter les utilisateurs en fonction de leurs intérêts et préférences.",
+    tags: [
+      {
+        name: "NextJS",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "BetterAuth",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Stripe",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "NUQS",
+        color: "orange-text-gradient",
+      },
+      {
+        name: "Arcjet",
+        color: "green-text-gradient",
+      },
+      {
+        name: "posthog",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/HB78/BoubttaHicham_4_07062021",
-  },
-  {
-    name: "ORINOCO",
-    description:
-      "SITE DE E-COMMERCE - Création d'un site de e-commerce pour peluches en Javascript vanilla",
-    tags: [
-      {
-        name: "javascript",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "green-text-gradient",
-      },
-    ],
-    image: orinoco,
-    source_code_link: "https://github.com/HB78/projet-P05-BOUBTTA-Hicham",
+    image: "/images/lastmodel.png",
+    source_code_link: "https://github.com/HB78/Lastmodel.net",
   },
   {
     name: "SO-PECKOKO",
@@ -331,4 +411,11 @@ const projects = [
   },
 ];
 
-export { experiences, projects, services, technologies, testimonials };
+export {
+  experiences,
+  projects,
+  services,
+  techCategories,
+  technologies,
+  testimonials,
+};

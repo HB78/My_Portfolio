@@ -16,12 +16,14 @@ const FeedbackCard = ({
 }) => (
   <motion.div
     variants={fadeIn("", "spring", index * 0.5, 0.75)}
-    className="bg-black-200 p-10 rounded-3xl xs:w-[320px] w-full"
+    className="bg-black-200 p-10 rounded-3xl xs:w-[320px] w-full border border-white/[0.05] hover:border-white/[0.1] transition-colors duration-300 shadow-card hover:shadow-2xl relative group overflow-hidden"
   >
-    <p className="text-white font-black text-[48px]">&quot;</p>
+    <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+    
+    <p className="text-white font-black text-[48px] opacity-30 group-hover:opacity-60 transition-opacity duration-300">&quot;</p>
 
-    <div className="mt-1">
-      <p className="text-white tracking-wider text-[18px]">{testimonial}</p>
+    <div className="mt-1 relative z-10">
+      <p className="text-white tracking-wider text-[18px] leading-[32px]">{testimonial}</p>
 
       <div className="mt-7 flex justify-between items-center gap-1">
         <div className="flex-1 flex flex-col">
@@ -32,12 +34,6 @@ const FeedbackCard = ({
             {designation} of {company}
           </p>
         </div>
-
-        {/* <Image
-          className='w-10 h-10 rounded-full object-cover'
-          src={image}
-          alt={`feedback_by-${name}`}
-        /> */}
       </div>
     </div>
   </motion.div>

@@ -17,68 +17,77 @@ const ProjectCard = ({
   image,
   source_code_link,
 }) => {
-  console.log(image);
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <motion.div
+      variants={fadeIn("up", "spring", index * 0.5, 0.75)}
+      className="group"
+    >
       <Tilt
-        options={{
-          max: 25, //45 avant
-          scale: 1,
-          speed: 400, //450 avant
-        }}
-        className="lg:w-[360px] bg-tertiary p-5 rounded-2xl w-[280px]"
+        tiltMaxAngleX={12}
+        tiltMaxAngleY={12}
+        scale={1.02}
+        transitionSpeed={1500}
+        className="relative w-[280px] sm:w-[360px] p-[1px] rounded-[32px]"
       >
-        {/* //la div qui contient la photo du projet et l'image de github, on met relative sur l'image du projet pour la lier avec le logo github */}
-        <div className="relative w-full">
-          <Image
-            src={image}
-            alt="project_image"
-            className="w-full h-[155px] object-cover rounded-2xl"
-            width={370} // Largeur maximale de l'image
-            height={155} // Hauteur maximale de l'image
-            quality={70}
-            priority
-          />
+        {/* Animated gradient border */}
+        <div className="absolute inset-0 rounded-[32px] bg-gradient-to-br from-[#915eff] via-purple-500 to-pink-500 opacity-20 group-hover:opacity-100 transition-opacity duration-500" />
 
-          {/* //div qui contient l'image github et la div sur laquelle on click pour aller sur github */}
-          <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
-            <div
-              onClick={() => window.open(source_code_link, "_blank")}
-              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
-            >
-              <Image
-                src={github}
-                alt="source code"
-                className="w-1/2 h-1/2 object-contain"
-                priority
-                quality={70}
-                width={40} // Largeur maximale de l'image
-                height={40} // Hauteur maximale de l'image
-              />
+        <div className="relative bg-[#0d1117] rounded-[31px] p-6 overflow-hidden">
+          {/* Decorative blur */}
+          <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#915eff] opacity-10 blur-3xl group-hover:opacity-30 transition-opacity duration-500" />
+
+          {/* Image */}
+          <div className="relative w-full h-[210px] rounded-2xl overflow-hidden shadow-2xl">
+            <Image
+              src={image}
+              alt={name}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              width={370}
+              height={210}
+              quality={70}
+              priority
+            />
+
+            {/* Overlay with GitHub button */}
+            <div className="absolute inset-0 flex justify-end items-start p-4 bg-gradient-to-b from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div
+                onClick={() => window.open(source_code_link, "_blank")}
+                className="bg-black/80 hover:bg-[#915eff] p-2.5 rounded-full backdrop-blur-md border border-white/20 cursor-pointer transition-all duration-300 hover:scale-110 active:scale-95"
+              >
+                <Image
+                  src={github}
+                  alt="source code"
+                  className="w-5 h-5 object-contain"
+                  priority
+                  quality={70}
+                  width={20}
+                  height={20}
+                />
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* //div qui contient le nom du projet et la description */}
-        <div className="w-full h-full mt-5">
-          <h3 className="text-white font-bold text-[18px] lg:text-[24px]">
-            {name}
-          </h3>
-          <p className="mt-2 text-secondary text-[12px] lg:text-[14px]">
-            {description}
-          </p>
-        </div>
-
-        {/* //div qui contient les tags en dessous des cards */}
-        <div className="mt-4 flex flex-wrap gap-2 sm:w-full">
-          {tags.map((tag) => (
-            <p
-              key={`${name}-${tag.name}`}
-              className={`text-[14px] ${tag.color}`}
-            >
-              #{tag.name}
+          {/* Info */}
+          <div className="relative mt-6">
+            <h3 className="text-white font-bold text-[18px] lg:text-[24px] group-hover:text-[#915eff] transition-colors duration-300">
+              {name}
+            </h3>
+            <p className="mt-2 text-secondary text-[13px] lg:text-[15px] leading-relaxed line-clamp-3 group-hover:line-clamp-none transition-all duration-300">
+              {description}
             </p>
-          ))}
+          </div>
+
+          {/* Tags */}
+          <div className="mt-5 flex flex-wrap gap-2">
+            {tags.map((tag) => (
+              <span
+                key={`${name}-${tag.name}`}
+                className={`px-3 py-1 text-[12px] font-medium rounded-full bg-white/5 border border-white/10 hover:bg-[#915eff]/20 hover:text-white transition-all cursor-default ${tag.color}`}
+              >
+                #{tag.name}
+              </span>
+            ))}
+          </div>
         </div>
       </Tilt>
     </motion.div>

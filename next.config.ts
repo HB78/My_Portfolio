@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
       dynamic: 30,
     },
   },
-  transpilePackages: ["three"],
+  transpilePackages: ["three", "@react-three/fiber", "@react-three/drei"],
 };
 
 export default nextConfig;
