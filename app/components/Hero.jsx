@@ -23,7 +23,7 @@ const Hero = () => {
         className="flex items-center flex-col justify-center w-full h-full"
       >
         <div
-          className={`${styles.paddingX} max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between h-full pt-[120px] pb-10 gap-10`}
+          className={`${styles.paddingX} max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between h-full pb-10 gap-10`}
         >
           {/* Colonne gauche — Texte */}
           <div className="flex-1 flex flex-col items-start justify-center">
@@ -71,13 +71,13 @@ const Hero = () => {
             <motion.div {...fadeIn(0.6)} className="flex gap-4 mt-8">
               <Link
                 href="#works"
-                className="bg-[#915eff] hover:bg-[#7a4de0] text-white font-medium py-3 px-8 rounded-xl transition-colors duration-300"
+                className="bg-[#915eff] hover:bg-[#7a4de0] text-white font-medium py-3 px-9 rounded-xl transition-colors duration-300"
               >
                 See my work
               </Link>
               <Link
                 href="#contact"
-                className="border-2 border-[#915eff] text-[#915eff] hover:bg-[#915eff]/10 font-medium py-3 px-8 rounded-xl transition-colors duration-300"
+                className="border-2 border-[#915eff] text-[#915eff] hover:bg-[#915eff]/10 font-medium py-3 px-9 rounded-xl transition-colors duration-300"
               >
                 Contact me
               </Link>
