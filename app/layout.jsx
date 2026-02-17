@@ -10,7 +10,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
-      <body className="relative z-0 bg-primary">
+      <body className="relative z-0 bg-primary overflow-x-hidden">
         <Toaster richColors />
         {children}
       </body>
