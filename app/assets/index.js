@@ -7,6 +7,7 @@ import mobile from "./mobile.png";
 import web from "./web.png";
 
 import burpsuite from "./tech/burpsuite.jpg";
+import claude from "./tech/claude.webp";
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
 import expressjs from "./tech/expressjs.png";
@@ -24,18 +25,17 @@ import nmap from "./tech/nmap.webp";
 import nodejs from "./tech/nodejs.png";
 import openai from "./tech/openai.jpg";
 import owaspzap from "./tech/owaspzap.jpg";
-import claude from "./tech/claude.webp";
 import postgresql from "./tech/postgresql.png";
 import prisma from "./tech/prisma.jpg";
+import promptengineer from "./tech/promptengineer.jpg";
 import reactjs from "./tech/reactjs.png";
 import redux from "./tech/redux.png";
-import promptengineer from "./tech/promptengineer.avif";
 import restapi from "./tech/restapi.png";
-import vercelaisdk from "./tech/vercelaisdk.png";
 import tailwind from "./tech/tailwind.png";
-import wireshark from "./tech/wireshark.jpg";
 import threejs from "./tech/threejs.png";
 import typescript from "./tech/typescript.png";
+import vercelaisdk from "./tech/vercelaisdk.png";
+import wireshark from "./tech/wireshark.jpg";
 import zustand from "./tech/zustand.jpg";
 
 import meta from "./company/meta.png";
@@ -49,10 +49,11 @@ import tripguide from "./tripguide.png";
 
 export {
   backend,
+  burpsuite,
   carrent,
+  claude,
   close,
   creator,
-  burpsuite,
   css,
   docker,
   expressjs,
@@ -75,22 +76,21 @@ export {
   nodejs,
   openai,
   owaspzap,
-  claude,
   postgresql,
-  promptengineer,
   prisma,
+  promptengineer,
   reactjs,
   redux,
   restapi,
-  vercelaisdk,
   shopify,
   starbucks,
   tailwind,
   tesla,
-  wireshark,
   threejs,
   tripguide,
   typescript,
+  vercelaisdk,
   web,
+  wireshark,
   zustand,
 };

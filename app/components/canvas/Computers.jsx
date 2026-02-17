@@ -71,7 +71,7 @@ const ComputersCanvas = () => {
       shadows
       //c'est qui va définirla partie du pc que l'on va regarder
       //axes x y z
-      camera={{ position: [20, 3, 5], fov: 30 }}
+      camera={{ position: [20, 3, 5], fov: 45 }}
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>

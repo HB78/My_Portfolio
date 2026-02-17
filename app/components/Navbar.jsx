@@ -13,9 +13,7 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <nav
-      className={`${styles.paddingX} w-full flex flex-center py-5 fixed top-0 z-20`}
-    >
+    <nav className={`${styles.paddingX} w-full flex flex-center py-5`}>
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto bg-primary">
         <Link
           aria-label="au clic un retour se fait au header"
