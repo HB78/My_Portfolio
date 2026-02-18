@@ -13,7 +13,7 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <nav className={`${styles.paddingX} w-full flex flex-center py-5`}>
+    <nav className={`${styles.paddingX} w-full flex items-center py-5`}>
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto bg-primary">
         <Link
           aria-label="au clic un retour se fait au header"
@@ -58,7 +58,8 @@ const Navbar = () => {
             );
           })}
         </ul>
-        {/* //ici ce sera le menu nav pour le mode mobile */}
+
+        {/* Menu mobile */}
         <div className="sm:hidden flex flex-1 justify-end items-center">
           <Image
             src={toggle ? close : menu}
@@ -72,15 +73,23 @@ const Navbar = () => {
               setToggle(!toggle);
             }}
           />
-          {/* //une div qui va contenir le menu */}
+
+          {/* Backdrop — ferme le menu au clic dehors */}
+          {toggle && (
+            <div
+              className="fixed inset-0 z-10"
+              onClick={() => setToggle(false)}
+            />
+          )}
+
+          {/* Dropdown */}
           <div
             className={`${
               !toggle ? "hidden" : "flex"
-            } p-6 absolute top-20 right-10
-         mx-4 my-2 min-w-min[140px] z-10 rounded-xl bg-black`}
+            } p-6 absolute top-20 right-4 min-w-[160px] z-20 rounded-2xl border border-white/10 bg-black-100/95 backdrop-blur-md shadow-lg`}
           >
             <ul
-              className="list-none flex justify-end items-start flex-col gap-4"
+              className="list-none flex flex-col gap-4 w-full"
               role="navigation"
             >
               {navLinks.map((link) => {
@@ -89,15 +98,15 @@ const Navbar = () => {
                     key={link.id}
                     className={`${
                       active === link.title ? "text-white" : "text-secondary"
-                    }
-                font-poppins font-medium cursor-pointer text-[16px]`}
+                    } font-medium cursor-pointer text-[16px] hover:text-white transition-colors`}
                     onClick={() => {
-                      //pour fermé automatiquement le menu quand on navigue entr les liens
-                      setToggle(!toggle);
+                      setToggle(false);
                       setActive(link.title);
                     }}
                   >
-                    <Link href={`#${link.id}`}>{link.title}</Link>
+                    <a href={`#${link.id}`} className="block w-full py-1">
+                      {link.title}
+                    </a>
                   </li>
                 );
               })}

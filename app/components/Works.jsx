@@ -27,7 +27,7 @@ const ProjectCard = ({
         tiltMaxAngleY={12}
         scale={1.02}
         transitionSpeed={1500}
-        className="relative w-[280px] sm:w-[360px] p-[1px] rounded-[32px]"
+        className="relative w-[100%] sm:w-[360px] p-[1px] rounded-[32px]"
       >
         {/* Animated gradient border */}
         <div className="absolute inset-0 rounded-[32px] bg-gradient-to-br from-[#915eff] via-purple-500 to-pink-500 opacity-20 group-hover:opacity-100 transition-opacity duration-500" />
