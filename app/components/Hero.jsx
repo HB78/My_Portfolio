@@ -68,16 +68,16 @@ const Hero = () => {
               .
             </motion.p>
 
-            <motion.div {...fadeIn(0.6)} className="flex gap-4 mt-8">
+            <motion.div {...fadeIn(0.6)} className="flex flex-wrap gap-4 mt-8">
               <Link
                 href="#works"
-                className="bg-[#915eff] hover:bg-[#7a4de0] text-white font-medium py-3 px-9 rounded-xl transition-colors duration-300"
+                className="bg-[#915eff] hover:bg-[#7a4de0] text-white font-medium py-3 px-6 sm:px-9 rounded-xl transition-colors duration-300 whitespace-nowrap"
               >
                 See my work
               </Link>
               <Link
                 href="#contact"
-                className="border-2 border-[#915eff] text-[#915eff] hover:bg-[#915eff]/10 font-medium py-3 px-9 rounded-xl transition-colors duration-300"
+                className="border-2 border-[#915eff] text-[#915eff] hover:bg-[#915eff]/10 font-medium py-3 px-6 sm:px-9 rounded-xl transition-colors duration-300 whitespace-nowrap"
               >
                 Contact me
               </Link>
