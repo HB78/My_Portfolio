@@ -23,10 +23,10 @@ const Hero = () => {
         className="flex items-center flex-col justify-center w-full h-full"
       >
         <div
-          className={`${styles.paddingX} max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between h-full pb-10 gap-10`}
+          className={`${styles.paddingX} max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center lg:justify-between h-full pb-10 gap-6 lg:gap-10`}
         >
           {/* Colonne gauche — Texte */}
-          <div className="flex-1 flex flex-col items-start justify-center">
+          <div className="flex flex-col items-start justify-center lg:flex-1">
             <motion.p
               {...fadeIn(0)}
               className="w-full text-[#915eff] text-sm sm:text-base text-center font-medium tracking-widest uppercase mb-4 lg:text-left"
@@ -68,7 +68,7 @@ const Hero = () => {
               .
             </motion.p>
 
-            <motion.div {...fadeIn(0.6)} className="flex flex-wrap gap-4 mt-8">
+            <motion.div {...fadeIn(0.6)} className="flex flex-wrap gap-4 mt-8 mx-auto lg:mx-0">
               <Link
                 href="#works"
                 className="bg-[#915eff] hover:bg-[#7a4de0] text-white font-medium py-3 px-6 sm:px-9 rounded-xl transition-colors duration-300 whitespace-nowrap"
@@ -89,7 +89,7 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.5, ease: "easeOut" }}
-            className="flex-1 flex items-center justify-center"
+            className="flex items-center justify-center lg:flex-1"
           >
             <div className="relative">
               {/* Cercle décoratif en arrière-plan */}
