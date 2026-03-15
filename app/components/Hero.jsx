@@ -23,7 +23,7 @@ const Hero = () => {
         className="flex items-center flex-col justify-center w-full h-full"
       >
         <div
-          className={`${styles.paddingX} max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center lg:justify-between h-full pb-10 gap-6 lg:gap-10`}
+          className={`${styles.paddingX} max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center lg:justify-between h-full lg:pb-10 gap-6 lg:gap-10`}
         >
           {/* Colonne gauche — Texte */}
           <div className="flex flex-col items-start justify-center lg:flex-1">
